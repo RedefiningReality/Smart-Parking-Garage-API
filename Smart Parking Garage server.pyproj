@@ -34,15 +34,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
-    <Compile Include="PoliciesAPI.py" />
-    <Compile Include="SpacesAPI.py" />
+    <Compile Include="api\PoliciesAPI.py" />
+    <Compile Include="api\SpacesAPI.py" />
     <Compile Include="tester.py" />
-    <Compile Include="UsersAPI.py" />
+    <Compile Include="api\UsersAPI.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ReservationsAPI.py" />
+    <Content Include="api\ReservationsAPI.py" />
     <Content Include="tester.http" />
     <Content Include="creds.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="api\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

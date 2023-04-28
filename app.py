@@ -1,5 +1,9 @@
 from flask import Flask
-import UsersAPI, SpacesAPI, PoliciesAPI, ReservationsAPI
+
+import api.UsersAPI as UsersAPI
+import api.SpacesAPI as SpacesAPI
+import api.PoliciesAPI as PoliciesAPI
+import api.ReservationsAPI as ReservationsAPI
 
 import Firebase as db
 
