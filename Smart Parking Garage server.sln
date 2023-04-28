@@ -8,10 +8,12 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Python Test|Any CPU = Python Test|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E5D6F025-AB20-4F77-ABB2-9D18DE788E5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5D6F025-AB20-4F77-ABB2-9D18DE788E5B}.Python Test|Any CPU.ActiveCfg = Python Test|Any CPU
 		{E5D6F025-AB20-4F77-ABB2-9D18DE788E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution

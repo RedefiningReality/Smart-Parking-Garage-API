@@ -4,13 +4,20 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e5d6f025-ab20-4f77-abb2-9d18de788e5b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Smart_Parking_Garage_server.py</StartupFile>
+    <StartupFile>app.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>Smart Parking Garage server</Name>
     <RootNamespace>Smart Parking Garage server</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <WebBrowserPort>5000</WebBrowserPort>
+    <PythonRunWebServerCommand>
+    </PythonRunWebServerCommand>
+    <PythonRunWebServerCommandEnvironment>
+    </PythonRunWebServerCommandEnvironment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,8 +27,22 @@
     <DebugSymbols>true</DebugSymbols>
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Python Test' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <OutputPath>bin\Python Test\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Smart_Parking_Garage_server.py" />
+    <Compile Include="app.py" />
+    <Compile Include="PoliciesAPI.py" />
+    <Compile Include="SpacesAPI.py" />
+    <Compile Include="tester.py" />
+    <Compile Include="UsersAPI.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReservationsAPI.py" />
+    <Content Include="tester.http" />
+    <Content Include="creds.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
