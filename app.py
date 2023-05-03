@@ -5,7 +5,7 @@ import api.SpacesAPI as SpacesAPI
 import api.PoliciesAPI as PoliciesAPI
 import api.ReservationsAPI as ReservationsAPI
 
-import Firebase as db
+from firebase import Firebase as db
 
 app = Flask(__name__)
 app.register_blueprint(UsersAPI.api)

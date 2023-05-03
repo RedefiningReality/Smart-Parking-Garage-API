@@ -9,7 +9,7 @@ firebase_admin.initialize_app(creds, {
 def init(num_spaces):
     spaces = {}
     for i in range(num_spaces):
-        spaces[i+1] = { 'occupied': 0 }
+        spaces[i] = { 'occupied': 0 }
 
     base = db.reference('/')
     base.set({ 'spaces': spaces })

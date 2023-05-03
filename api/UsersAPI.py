@@ -1,9 +1,9 @@
 from flask import Blueprint, request
-import Firebase as db
+from ..firebase import Firebase as db
 
 api = Blueprint('users', __name__)
 
-@api.get('/users')
+@api.get('/api/users')
 def get_users():
     users = db.reference('/users').get()
     if users:
@@ -11,7 +11,7 @@ def get_users():
     else:
         return []
 
-@api.post('/users')
+@api.post('/api/users')
 def create_user():
     if request.is_json:
         data = request.get_json()
@@ -42,12 +42,35 @@ def create_user():
 
     return 'Request must be in JSON format', 415
 
-@api.delete('/users')
-def remove_all():
+@api.delete('/api/users')
+def remove_all_users():
     db.reference('/users').set({})
     return '', 204
 
-@api.delete('/users/<string:username>')
+@api.put('/api/users/<string:username>')
+def change_username(username):
+    users = db.reference(f'/users')
+    user = users.child(username)
+    user_data = user.get()
+    if user_data:
+        if request.is_json:
+            data = request.get_json()
+
+            new = data.get('username')
+            if new and new != username:
+                if users.child(new).get():
+                    return f'User {new} already exists', 409
+                else:
+                    user.set({})
+                    users.update({ new: user_data })
+            else:
+                return 'Must specify a new username with key username', 400
+        else:
+            return 'Request must be in JSON format', 415
+    else:
+        return 'The specified user does not exist', 404
+
+@api.delete('/api/users/<string:username>')
 def remove_user(username):
     user = db.reference(f'/users/{username}')
     if user.get():
@@ -56,11 +79,35 @@ def remove_user(username):
     else:
         return 'The specified user does not exist', 404
 
-@api.get('/users/<string:username>/info')
+@api.get('/api/users/<string:username>/info')
 def get_user(username):
     response = db.reference(f'/users/{username}').get()
     if response:
         return response
+    else:
+        return 'The requested user does not exist', 404
+
+@api.put('/api/users/<string:username>/info')
+def update_user(username):
+    user = db.reference(f'/users/{username}')
+    if user.get():
+        if request.is_json:
+            data = request.get_json()
+            password = data.get('password')
+            email = data.get('email')
+            phone = data.get('phone')
+
+            new = {}
+            if password:
+                new['password'] = password
+            if email:
+                new['email'] = email
+            if phone:
+                new['phone'] = phone
+
+            user.update(data)
+        else:
+            'Request must be in JSON format', 415
     else:
         return 'The requested user does not exist', 404
 

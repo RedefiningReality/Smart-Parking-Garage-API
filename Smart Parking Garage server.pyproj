@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e5d6f025-ab20-4f77-abb2-9d18de788e5b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.py</StartupFile>
+    <StartupFile>tester.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="api\Firebase.py" />
     <Compile Include="api\PoliciesAPI.py" />
     <Compile Include="api\SpacesAPI.py" />
     <Compile Include="tester.py" />

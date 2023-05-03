@@ -2,23 +2,46 @@ GET http://127.0.0.1:5000 HTTP/1.1
 
 ###
 
-GET http://127.0.0.1:5000/users HTTP/1.1
+GET http://127.0.0.1:5000/api/users HTTP/1.1
 
 ###
 
-GET http://127.0.0.1:5000/users/test/info HTTP/1.1
+DELETE http://127.0.0.1:5000/api/users HTTP/1.1
 
 ###
 
-POST http://127.0.0.1:5000/users HTTP/1.1
+POST http://127.0.0.1:5000/api/users HTTP/1.1
 content-type: application/json
 
 {
-	"username": "test3",
+	"username": "johnford",
 	"password": "test123",
 	"email": "jford11@hawk.iit.edu"
 }
 
 ###
 
-DELETE http://127.0.0.1:5000/users HTTP/1.1
+PUT http://127.0.0.1:5000/api/users/johnford HTTP/1.1
+content-type: application/json
+
+{
+	"username": "johnford2"
+}
+
+###
+
+DELETE http://127.0.0.1:5000/api/users/johnford2
+
+###
+
+GET http://127.0.0.1:5000/api/users/johnford/info HTTP/1.1
+
+###
+
+PUT http://127.0.0.1:5000/api/users/johnford/info HTTP/1.1
+content-type: application/json
+
+{
+	"password": "hi"
+	"phone": "(224) 223-0814"
+}
