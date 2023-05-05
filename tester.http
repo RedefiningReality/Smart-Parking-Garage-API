@@ -15,8 +15,8 @@ content-type: application/json
 
 {
 	"username": "johnford",
-	"password": "test123",
-	"email": "jford11@hawk.iit.edu"
+	"password": "test1234",
+	"email": "jford10@hawk.iit.edu"
 }
 
 ###
@@ -30,7 +30,7 @@ content-type: application/json
 
 ###
 
-DELETE http://127.0.0.1:5000/api/users/johnford2
+DELETE http://127.0.0.1:5000/api/users/johnford2 HTTP/1.1
 
 ###
 
@@ -38,10 +38,63 @@ GET http://127.0.0.1:5000/api/users/johnford/info HTTP/1.1
 
 ###
 
-PUT http://127.0.0.1:5000/api/users/johnford/info HTTP/1.1
+PUT http://127.0.0.1:5000/api/users/johnford3/info HTTP/1.1
 content-type: application/json
 
 {
-	"password": "hi"
-	"phone": "(224) 223-0814"
+	"password": "hi3",
+	"email": "johnthejolly@gmail.com",
+	"phone": "(224) 223-0815",
+	"cow": "no"
+}
+
+###
+
+GET http://127.0.0.1:5000/api/spaces HTTP/1.1
+
+###
+
+GET http://127.0.0.1:5000/api/spaces?drive_in=true HTTP/1.1
+
+###
+
+DELETE http://127.0.0.1:5000/api/spaces HTTP/1.1
+
+###
+
+POST http://127.0.0.1:5000/api/spaces HTTP/1.1
+content-type: application/json
+
+{
+	"id": 1,
+	"occupied": true,
+	"price": 25.0
+}
+
+###
+
+PUT http://127.0.0.1:5000/api/spaces/101 HTTP/1.1
+content-type: application/json
+
+{
+	"id": 1
+}
+
+###
+
+DELETE http://127.0.0.1:5000/api/spaces/12 HTTP/1.1
+
+###
+
+GET http://127.0.0.1:5000/api/spaces/1/properties HTTP/1.1
+
+###
+
+PUT http://127.0.0.1:5000/api/spaces/1/properties HTTP/1.1
+content-type: application/json
+
+{
+	"occupied": true,
+	"price": 19.99,
+	"drive_in": false
 }

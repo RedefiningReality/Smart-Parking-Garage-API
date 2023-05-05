@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from ..firebase import Firebase as db
+from firebase import Firebase as db
 
 api = Blueprint('users', __name__)
 
@@ -63,6 +63,7 @@ def change_username(username):
                 else:
                     user.set({})
                     users.update({ new: user_data })
+                    return '', 204
             else:
                 return 'Must specify a new username with key username', 400
         else:
@@ -105,7 +106,8 @@ def update_user(username):
             if phone:
                 new['phone'] = phone
 
-            user.update(data)
+            user.update(new)
+            return '', 204
         else:
             'Request must be in JSON format', 415
     else:

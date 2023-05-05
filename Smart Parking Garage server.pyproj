@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e5d6f025-ab20-4f77-abb2-9d18de788e5b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tester.py</StartupFile>
+    <StartupFile>app.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
-    <Compile Include="api\Firebase.py" />
+    <Compile Include="firebase\Firebase.py" />
     <Compile Include="api\PoliciesAPI.py" />
     <Compile Include="api\SpacesAPI.py" />
     <Compile Include="tester.py" />
@@ -43,10 +43,11 @@
   <ItemGroup>
     <Content Include="api\ReservationsAPI.py" />
     <Content Include="tester.http" />
-    <Content Include="creds.json" />
+    <Content Include="firebase\creds.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="api\" />
+    <Folder Include="firebase\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

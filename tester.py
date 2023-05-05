@@ -8,4 +8,4 @@ firebase_admin.initialize_app(creds, {
     'databaseURL': 'https://smart-parking-garage-default-rtdb.firebaseio.com/'
 })
 
-db.reference('/spaces/1').update({ 'occupied': 1 })
+db.reference('/spaces/1').update({ 'occupied': True })
