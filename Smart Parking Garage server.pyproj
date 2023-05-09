@@ -33,6 +33,7 @@
     <OutputPath>bin\Python Test\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="api\CategoriesAPI.py" />
     <Compile Include="app.py" />
     <Compile Include="firebase\Firebase.py" />
     <Compile Include="api\PoliciesAPI.py" />

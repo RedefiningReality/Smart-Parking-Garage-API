@@ -2,6 +2,7 @@ from flask import Flask
 
 import api.UsersAPI as UsersAPI
 import api.SpacesAPI as SpacesAPI
+import api.CategoriesAPI as CategoriesAPI
 import api.PoliciesAPI as PoliciesAPI
 import api.ReservationsAPI as ReservationsAPI
 
@@ -10,6 +11,7 @@ from firebase import Firebase as db
 app = Flask(__name__)
 app.register_blueprint(UsersAPI.api)
 app.register_blueprint(SpacesAPI.api)
+app.register_blueprint(CategoriesAPI.api)
 app.register_blueprint(PoliciesAPI.api)
 app.register_blueprint(ReservationsAPI.api)
 
